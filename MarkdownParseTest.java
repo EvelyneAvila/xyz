@@ -8,6 +8,8 @@ import java.util.List;
 import org.junit.*;
 
 public class MarkdownParseTest {
+
+    /*
     @Test
     public void addition() {
         assertEquals(2, 1 + 1);
@@ -40,7 +42,7 @@ public class MarkdownParseTest {
         catch (IndexOutOfBoundsException e){
 
         }
-    }
+    }*/
 
     @Test
     public void testSnippet1() throws IOException {
