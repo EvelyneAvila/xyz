@@ -44,18 +44,19 @@ public class MarkdownParseTest {
 
     @Test
     public void testSnippet1() throws IOException {
-        Path file = Path.of("snippet1.md");
-        String contents = Files.readString(file);
+        Path fileName = Path.of("snippet1.md");
+	    String contents = Files.readString(fileName);
+        //ArrayList<String> links = getLinks(contents);
+        assertEquals("[`google.com, google.com, ucsd.edu]", MarkdownParse.getLinks(contents));
+    } 
 
-        assertEquals(List.of("google.com", "google.com", "ucsd.edu"), MarkdownParse.getLinks(contents));
-    }
-
+    
     @Test
     public void testSnippet2() throws IOException {
-        Path file = Path.of("snippet2.md");
-        String contents = Files.readString(file);
-
-        assertEquals(List.of("a.com", "a.com(())", "example.com"), MarkdownParse.getLinks(contents));
+        Path fileName = Path.of("snippet2.md");
+	    String contents = Files.readString(fileName);
+        //ArrayList<String> links = getLinks(contents);
+        assertEquals("[a.com, a.com(()), example.com]", MarkdownParse.getLinks(contents));
     }
 
     @Test
